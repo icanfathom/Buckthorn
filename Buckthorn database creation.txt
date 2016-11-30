@@ -1,0 +1,62 @@
+CREATE TABLE team
+(
+	team_name VARCHAR(30),
+	PRIMARY KEY (team_name)
+);
+
+CREATE TABLE student
+(
+	team_name VARCHAR(30),
+	stu_name VARCHAR(30),
+	PRIMARY KEY (team_name, stu_name),
+	FOREIGN KEY (team_name) REFERENCES team(team_name)
+);
+
+CREATE TABLE observation
+(
+	obs_id INT AUTO_INCREMENT,
+	team_name VARCHAR(30),
+	coord_n FLOAT,
+	coord_w FLOAT,
+	quadrat_size INT,
+	num_bt_stems INT,
+	follar_coverage FLOAT,
+	median_bt_circumference FLOAT,
+	description VARCHAR(4096),
+	photo_link VARCHAR(300),
+	obs_notes VARCHAR(4096),
+	PRIMARY KEY (obs_id),
+	FOREIGN KEY (team_name) REFERENCES team(team_name)
+);
+
+CREATE TABLE biodiversity
+(
+	obs_id INT,
+	num_bt INT,
+	bio_notes VARCHAR(4096),
+	PRIMARY KEY (obs_id),
+	FOREIGN KEY (obs_id) REFERENCES observation(obs_id)
+);
+
+CREATE TABLE bio_species
+(
+	obs_id INT,
+	species CHAR(1),
+	num INT,
+	PRIMARY KEY (obs_id, species),
+	FOREIGN KEY (obs_id) REFERENCES observation(obs_id)
+);
+
+CREATE TABLE competition
+(
+	obs_id INT,
+	bt_index INT,
+	dbh FLOAT,
+	dist_to_nearest_bt FLOAT,
+	nearest_bt_dbh FLOAT,
+	dist_to_nearest_non_bt FLOAT,
+	nearest_non_bt_dbh FLOAT,
+	cmp_notes VARCHAR(4096),
+	PRIMARY KEY (obs_id, bt_index),
+	FOREIGN KEY (obs_id) REFERENCES observation(obs_id)
+);
