@@ -1,0 +1,21 @@
+INSERT INTO team
+VALUES ('The Vets');
+
+INSERT INTO student
+VALUES ('The Vets', 'Commander Shepard');
+
+INSERT INTO observation (team_name, coord_n, coord_w, quadrat_size, num_bt_stems, follar_coverage, median_bt_circumference, description, photo_link, obs_notes)
+VALUES ('The Vets', 45.05, 94, 1, 20, .90, 78.74, 'Deeply shaded, moist, 45 degree slope, one large buckthorn plant', 'https://docs.google.com/presentation/d/12fU4TU-I004i9wA_iMvOzfrPvzGPBuacanlLv77MAlo/edit#slide=id.g169aaab629_0_0
+', 'Our quadrants were selected within an area of about 15 ft each way of our GPS location detected, therefore we only have one set of coordinates. After exploring our region more in depth last week, we figured that the quadrants we counted were in a fact an accurate and true representation of the whole area, therefore did not need to take individual coordinates.');
+
+INSERT INTO biodiversity
+VALUES (1, 20, 'Some notes about stuff.');
+
+INSERT INTO bio_species
+VALUES (1, 'B', 5);
+
+INSERT INTO bio_species
+VALUES (1, 'C', 5);
+
+INSERT INTO competition
+VALUES (1, 1, 0.5, 10, 0.7, 6.5, 0.2, 'Some more notes.');
