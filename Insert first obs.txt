@@ -1,11 +1,21 @@
 INSERT INTO team (team_name)
 VALUES ('The Vets');
+INSERT INTO team (team_name)
+VALUES ('Team Skyrim');
 
 INSERT INTO student (team_id, stu_name)
 VALUES (1, 'Commander Shepard');
+INSERT INTO student (team_id, stu_name)
+VALUES (1, 'Jon Doe');
+INSERT INTO student (team_id, stu_name)
+VALUES (1, 'Jane Smith');
+INSERT INTO student (team_id, stu_name)
+VALUES (2, 'Jarl Ulfric');
+INSERT INTO student (team_id, stu_name)
+VALUES (2, 'The Dovahkiin');
 
 INSERT INTO observation (team_id, coord_n, coord_w, quadrat_size, num_bt_stems, follar_coverage, median_bt_circumference, description, photo_link, obs_notes)
-VALUES (1, 45.05, 94, 1, 20, .90, 78.74, 'Deeply shaded, moist, 45 degree slope, one large buckthorn plant', 'https://docs.google.com/presentation/d/12fU4TU-I004i9wA_iMvOzfrPvzGPBuacanlLv77MAlo/edit#slide=id.g169aaab629_0_0
+VALUES (1, 45.05, 94, 1, 2, .90, 78.74, 'Deeply shaded, moist, 45 degree slope, one large buckthorn plant', 'https://docs.google.com/presentation/d/12fU4TU-I004i9wA_iMvOzfrPvzGPBuacanlLv77MAlo/edit#slide=id.g169aaab629_0_0
 ', 'Our quadrants were selected within an area of about 15 ft each way of our GPS location detected, therefore we only have one set of coordinates. After exploring our region more in depth last week, we figured that the quadrants we counted were in a fact an accurate and true representation of the whole area, therefore did not need to take individual coordinates.');
 
 INSERT INTO biodiversity
