@@ -1,5 +1,4 @@
 <?php
-	//header.php provides $con, a connection to the db
 	include 'header.php';
 ?>
 
@@ -8,25 +7,24 @@
 	<?php
 		$teamQuery = "SELECT * FROM team";
 
-		if (isset($_GET['team_id']) && !empty($_GET['team_id']))
+		if (has_value($_GET['team_id']))
 		{
 			$teamQuery = "SELECT * FROM team WHERE team_id = {$_GET['team_id']}";
 		}
 		
-		$teamResult = mysqli_query($con, $teamQuery);
+		$teams = run_sql_string($teamQuery);
 
-		while($teamRow = mysqli_fetch_array($teamResult))
+		foreach ($teams as $team)
 		{
-			echo "<h2><a href=\"?team_id=$teamRow[team_id]\">$teamRow[team_name]</a></h2>";
+			echo "<h2><a href=\"?team_id=$team[team_id]\">$team[team_name]</a></h2>";
 
-			$stuQuery = "SELECT * FROM student WHERE team_id = $teamRow[team_id]";
-			$stuResult = mysqli_query($con, $stuQuery);
+			$students = run_sql_string("SELECT * FROM student WHERE team_id = $team[team_id]");
 			
-			echo "<table border=\"1\">";
-			while ($stuRow = mysqli_fetch_array($stuResult))
+			echo "<table>";
+			foreach ($students as $student)
 			{
 				echo "<tr>";
-				echo "<td>$stuRow[stu_name]</td>";
+				echo "<td>$student[stu_name]</td>";
 				echo "</tr>";
 			}
 			echo "</table>";
