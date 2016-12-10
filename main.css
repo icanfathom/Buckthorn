@@ -16,3 +16,20 @@ ul.inline.competition li {
 	padding-bottom: 8px;
 	border-bottom: 1px solid #cccccc;
 }
+
+div.collapsible-header {
+	background-color: white;
+	transition: background-color 0.5s;
+}
+
+div.collapsible-header.active {
+	background-color: #B2D8B2;
+}
+
+/*div.collapsible-header.active + div.collapsible-body {
+	background-color: #e7f3e7;
+}
+
+div.collapsible-header.active + div.collapsible-body div.card {
+	background-color: #f7fbf7;
+}*/
