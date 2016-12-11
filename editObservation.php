@@ -90,7 +90,12 @@ include 'header.php';
 				<a href="<?php echo $url . "observations.php"; ?>" class="btn red darken-3 waves-effect waves-light"><i class="material-icons right">cancel</i>Cancel</a>
 			</div>
 			<div class="col s12 l3 offset-l4">
-				<button type="submit" class="btn waves-effect waves-light"><i class="material-icons right">add</i>Add</button>
+				<?php if (has_value($obs)): ?>
+					<button type="submit" name="action" value="edit" class="btn waves-effect waves-light"><i class="material-icons right">mode_edit</i>Modify</button>
+					<input type="hidden" name="obs_id" value="<?php echo $obs['obs_id']; ?>">
+				<?php else: ?>
+					<button type="submit" name="action" value="add" class="btn waves-effect waves-light"><i class="material-icons right">add</i>Add</button>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

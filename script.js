@@ -25,4 +25,10 @@ $(document).ready(function(){
 		$('button.submit-action-edit').show();
 		Materialize.updateTextFields();
 	});
+
+	$('.show-obs-notes').click(function() {
+		var notesID = $(this).attr('id');
+		notesID = notesID.replace("btn", "card");
+		$('#' + notesID).toggle(400);
+	});
 });

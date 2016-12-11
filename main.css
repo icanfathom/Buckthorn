@@ -1,3 +1,7 @@
+a {
+	color: #4caf50;
+}
+
 ul.inline {
 	display: inline-block;
 }
@@ -18,12 +22,12 @@ ul.inline.competition li {
 }
 
 div.collapsible-header {
-	background-color: white;
+	background-color: #eeeeee;
 	transition: background-color 0.5s;
 }
 
 div.collapsible-header.active {
-	background-color: #B2D8B2;
+	background-color: white;
 }
 
 /*div.collapsible-header.active + div.collapsible-body {
@@ -33,3 +37,17 @@ div.collapsible-header.active {
 div.collapsible-header.active + div.collapsible-body div.card {
 	background-color: #f7fbf7;
 }*/
+
+div.card.obs-notes {
+	display: none;
+	margin-left: 20%;
+}
+
+ul.collapsible.obs li.active {
+	background-color: #4caf50;
+}
+
+div.collapsible-body {
+	padding-left: 8px;
+	padding-right: 8px;
+}
