@@ -16,8 +16,8 @@
 					<h3 id="team_name"><?php echo $team[0]['team_name']; ?></h3>
 				</div>
 				<div class="col s3">
-					<a href="#modal1" class="btn-floating waves-effect waves-light green edit-team"><i class="material-icons">mode_edit</i></a>
-					<button type="submit" name="action" value="delete" class="btn-floating waves-effect waves-light yellow darken-4"><i class="material-icons">delete</i></button>
+					<a href="#modal1" class="btn-floating waves-effect waves-light green edit-team team-action-btn"><i class="material-icons">mode_edit</i></a>
+					<button type="submit" name="action" value="delete" class="btn-floating waves-effect waves-light yellow darken-4 team-action-btn"><i class="material-icons">delete</i></button>
 					<input type="hidden" name="team_id" class="hidden-team-id" value="<?php echo $team[0]['team_id']; ?>">
 					<input type="hidden" name="team_name" class="hidden-team-name" value="<?php echo $team[0]['team_name']; ?>">
 				</div>

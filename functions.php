@@ -1,23 +1,20 @@
 <?php
 	session_start();
+	$_SESSION['access_lvl'] = 1; //Student-level access
 	
 	require 'connect.php';
 	
-	$con;
+	static $con = null;
 	function get_con()
 	{
 		global $db_username;
 		global $db_password;
 
-		if (has_value($con))
-		{
-			return $con;
-		}
-		else
+		if ($con === null)
 		{
 			$con = mysqli_connect("localhost",$db_username,$db_password,"DB07") or die("Some error occurred during connection " . mysqli_error($con));
-			return $con;
 		}
+		return $con;
 	}
 
 	function has_value($object)

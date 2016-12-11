@@ -2,6 +2,8 @@ $(document).ready(function(){
 	$('.collapsible').collapsible();
 	$('.modal').modal();
 
+	$('.datepicker').pickadate();
+
 	$('.edit-team').click(function() {
 		var team_id = $(this).siblings('.hidden-team-id').val();
 		var team_name = $(this).siblings('.hidden-team-name').val();
@@ -29,6 +31,6 @@ $(document).ready(function(){
 	$('.show-obs-notes').click(function() {
 		var notesID = $(this).attr('id');
 		notesID = notesID.replace("btn", "card");
-		$('#' + notesID).toggle(400);
+		$('#' + notesID).slideToggle(400);
 	});
 });

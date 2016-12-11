@@ -8,14 +8,11 @@ include 'functions.php';
 			switch ($_POST['action'])
 			{
 				case 'add':
-					run_sql_string("INSERT INTO team (team_name) VALUES ('{$_POST['team_name']}')");
-					/*
-					TO DO:
-					can we get the resulting team_id from the query? And then redirect there?
-
-					header("Location: http://www.mathcs.bethel.edu/~jom44754/Buckthorn/editTeam.php?team_id=".$_SESSION['last_team_viewed']);
+					$con = get_con();
+					$result = mysqli_query($con, "INSERT INTO team (team_name) VALUES ('{$_POST['team_name']}')");
+					$team_id = mysqli_insert_id($con);
+					header("Location: http://www.mathcs.bethel.edu/~jom44754/Buckthorn/editTeam.php?team_id=$team_id");
 					die();
-					*/
 				break;
 				case 'edit':
 					run_sql_string("UPDATE team SET team_name = '{$_POST['team_name']}' WHERE team_id = {$_POST['team_id']}");

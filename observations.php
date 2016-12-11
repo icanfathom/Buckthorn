@@ -15,10 +15,10 @@ include 'header.php';
 	<?php foreach ($observations as $obs): ?>
 		<li>
 			<div class="collapsible-header">
-				<ul>
+				<ul class="inline">
 					<li class="date" ><?php echo $obs['date']; ?></li>
-					<li class="teamName" ><?php echo $obs['team_name']; ?></li>
-					<li class="numStems" ><?php echo "{$obs['num_bt_stems']} stems"; ?></li>
+					<li class="team-name" ><?php echo $obs['team_name']; ?></li>
+					<li class="num-stems" ><?php echo "{$obs['num_bt_stems']} stems"; ?></li>
 					<li class="notes" ><?php echo $obs['description']; ?></li>
 					<div class="secondary-content">
 						<a href="<?php echo "editObservation.php?obs_id={$obs['obs_id']}"; ?>"><i class="material-icons green-text">mode_edit</i></a>
@@ -104,9 +104,9 @@ include 'header.php';
 					<div class="card-content">
 						<span class="card-title">Biodiversity</span>
 						<ul>
-							<li>Biodiversity: <?php echo $bio_string ?></li>
-							<li>Shannon-Weiner index: TODO</li>
-							<li>Notes: <?php echo $bio['bio_notes']; ?></li>
+							<li><b>Biodiversity:</b> <?php echo $bio_string ?></li>
+							<li><b>Shannon-Weiner index:</b> TODO</li>
+							<li><b>Notes:</b> <?php echo $bio['bio_notes']; ?></li>
 						</ul>
 					</div>
 				</div>
@@ -122,13 +122,13 @@ include 'header.php';
 							<?php foreach ($compResults as $comp): ?>
 								<li class="collection-item">
 									<ul class="inline competition">
-										<li>BT <?php echo $comp['bt_index']; ?></li>
-										<li>DBH: <?php echo $comp['dbh']; ?></li>
-										<li>Dist to nearest BT: <?php echo $comp['dist_to_nearest_bt']; ?></li>
-										<li>Nearest BT DBH: <?php echo $comp['nearest_bt_dbh']; ?></li>
-										<li>Dist to nearest Non-BT: <?php echo $comp['dist_to_nearest_non_bt']; ?></li>
-										<li>Nearest Non-BT DBH: <?php echo $comp['nearest_non_bt_dbh']; ?></li>
-										<li>Notes: <?php echo $comp['cmp_notes']; ?></li>
+										<li><b>BT</b> <?php echo $comp['bt_index']; ?></li>
+										<li><b>DBH:</b> <?php echo $comp['dbh']; ?></li>
+										<li><b>Dist to nearest BT:</b> <?php echo $comp['dist_to_nearest_bt']; ?></li>
+										<li><b>Nearest BT DBH:</b> <?php echo $comp['nearest_bt_dbh']; ?></li>
+										<li><b>Dist to nearest Non-BT:</b> <?php echo $comp['dist_to_nearest_non_bt']; ?></li>
+										<li><b>Nearest Non-BT DBH:</b> <?php echo $comp['nearest_non_bt_dbh']; ?></li>
+										<li><b>Notes:</b> <?php echo $comp['cmp_notes']; ?></li>
 									</ul>
 								</li>
 							<?php endforeach; ?>
@@ -139,5 +139,11 @@ include 'header.php';
 		</li>
 	<?php endforeach; ?>
 </ul>
+
+<div class="fixed-action-btn">
+	<a href="editObservation.php" class="btn-floating btn-large green">
+		<i class="large material-icons">add</i>
+	</a>
+</div>
 
 <?php include 'footer.php'; ?>

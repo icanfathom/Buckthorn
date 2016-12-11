@@ -2,18 +2,27 @@ a {
 	color: #4caf50;
 }
 
-ul.inline {
+ul.inline li {
 	display: inline-block;
 }
 
-.collapsible-header ul li {
-	display: inline-block;
-	padding: 0 16px;
+nav.main-nav {
+	padding-left: 40px;
+	padding-right: 40px;
 }
 
 ul.inline.competition li {
-	display: inline-block;
 	padding: 0 16px;
+}
+
+.collapsible-header li.date {
+	width: 100px;
+}
+.collapsible-header li.team-name {
+	width: 140px;
+}
+.collapsible-header li.num-stems {
+	width: 100px;
 }
 
 .student-list {
@@ -50,4 +59,8 @@ ul.collapsible.obs li.active {
 div.collapsible-body {
 	padding-left: 8px;
 	padding-right: 8px;
+}
+
+.team-action-btn {
+	margin-top: 24px;
 }

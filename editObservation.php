@@ -32,7 +32,7 @@ include 'header.php';
 	</div>
 	<div class="row">
 		<div class="col s12 l4 input-field">
-			<input type="text" name="date" value="<?php echo $obs['date']; ?>">
+			<input type="date" class="datepicker" name="date" value="<?php echo $obs['date']; ?>">
 			<label for="date">Date</label>
 		</div>
 	</div>
@@ -69,7 +69,7 @@ include 'header.php';
 	<div class="row">
 		<div class="col s12 l6 input-field">
 			<textarea name="description" class="materialize-textarea"><?php echo $obs['description']; ?></textarea>
-			<label for="description">Description</label>
+			<label for="description">Habitat description</label>
 		</div>
 	</div>
 	<div class="row">
@@ -91,10 +91,10 @@ include 'header.php';
 			</div>
 			<div class="col s12 l3 offset-l4">
 				<?php if (has_value($obs)): ?>
-					<button type="submit" name="action" value="edit" class="btn waves-effect waves-light"><i class="material-icons right">mode_edit</i>Modify</button>
+					<button type="submit" name="action" value="edit" class="btn waves-effect waves-light green"><i class="material-icons right">mode_edit</i>Modify</button>
 					<input type="hidden" name="obs_id" value="<?php echo $obs['obs_id']; ?>">
 				<?php else: ?>
-					<button type="submit" name="action" value="add" class="btn waves-effect waves-light"><i class="material-icons right">add</i>Add</button>
+					<button type="submit" name="action" value="add" class="btn waves-effect waves-light green"><i class="material-icons right">add</i>Add</button>
 				<?php endif; ?>
 			</div>
 		</div>
