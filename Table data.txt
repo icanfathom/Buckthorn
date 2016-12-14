@@ -13,7 +13,10 @@ VALUES ('12/6/16', 1, 45.05, 94, 1, 2, .90, 78.74, 'Deeply shaded, moist, 45 deg
 ', 'Our quadrants were selected within an area of about 15 ft each way of our GPS location detected, therefore we only have one set of coordinates. After exploring our region more in depth last week, we figured that the quadrants we counted were in a fact an accurate and true representation of the whole area, therefore did not need to take individual coordinates.');
 
 INSERT INTO biodiversity
-VALUES (1, 2, 'Some notes about stuff.');
+VALUES (1, 'Some notes about stuff.');
+
+INSERT INTO bio_species
+VALUES (1, 'A', 2);
 
 INSERT INTO bio_species
 VALUES (1, 'B', 5);
@@ -42,6 +45,9 @@ VALUES ('12/6/16', 2, 45.05, 94, 1, 2, .90, 78.74, 'Deeply shaded, moist, 20 deg
 
 INSERT INTO biodiversity
 VALUES (2, 2, 'Some notes about stuff.');
+
+INSERT INTO bio_species
+VALUES (2, 'A', 3);
 
 INSERT INTO bio_species
 VALUES (2, 'B', 5);

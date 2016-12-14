@@ -52,7 +52,7 @@
 	?>
 
 	<div class="fixed-action-btn">
-		<a href="#modal1" class="btn-floating btn-large green">
+		<a href="#modal1" class="btn-floating btn-large waves-effect green">
 			<i class="large material-icons">add</i>
 		</a>
 	</div>

@@ -5,6 +5,7 @@ include 'header.php';
 	$sql_string = "SELECT * FROM observation NATURAL JOIN team";
 	if (has_value($_GET['team_id']))
 		$sql_string .= " WHERE team_id = " . $_GET['team_id'];
+	$sql_string .= " ORDER BY date DESC";
 
 	$observations = run_sql_string($sql_string);
 ?>
@@ -20,9 +21,12 @@ include 'header.php';
 					<li class="team-name" ><?php echo $obs['team_name']; ?></li>
 					<li class="num-stems" ><?php echo "{$obs['num_bt_stems']} stems"; ?></li>
 					<li class="notes" ><?php echo $obs['description']; ?></li>
-					<div class="secondary-content">
+					<div class="secondary-content short">
 						<a href="<?php echo "editObservation.php?obs_id={$obs['obs_id']}"; ?>"><i class="material-icons green-text">mode_edit</i></a>
-						<a href="" class="yellow-text text-darken-4"><i class="material-icons">delete</i></a>
+						<form action="processObservation.php" method="post" class="inline-block">
+							<button type="submit" name="action" value="delete" class="yellow-text text-darken-4 clear-btn-formatting"><i class="material-icons">delete</i></button>
+							<input type="hidden" name="obs_id" value="<?php echo $obs['obs_id']; ?>">
+						</form>
 					</div>
 				</ul>
 			</div>
@@ -94,10 +98,10 @@ include 'header.php';
 				$speciesResults = run_sql_string("SELECT * FROM bio_species WHERE obs_id = {$obs['obs_id']} ORDER BY species");
 
 					//Throw together the string of surrounding species
-				$bio_string = "A ({$bio['num_bt']})";
+				$bio_string = "";
 				foreach ($speciesResults as $species)
 				{
-					$bio_string .= ", {$species['species']} ({$species['num']})";
+					$bio_string .= "{$species['species']} ({$species['num']})  ";
 				}
 				?>
 				<div class="card">
@@ -141,7 +145,7 @@ include 'header.php';
 </ul>
 
 <div class="fixed-action-btn">
-	<a href="editObservation.php" class="btn-floating btn-large green">
+	<a href="editObservation.php" class="btn-floating btn-large waves-effect green">
 		<i class="large material-icons">add</i>
 	</a>
 </div>

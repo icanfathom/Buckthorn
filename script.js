@@ -1,8 +1,14 @@
-$(document).ready(function(){
+var root_url = "http://www.mathcs.bethel.edu/~jom44754/Buckthorn/";
+
+$(document).ready(function() {
 	$('.collapsible').collapsible();
 	$('.modal').modal();
 
-	$('.datepicker').pickadate();
+	$('.datepicker').pickadate({
+		format: 'mm/dd/yyyy',
+		formatSubmit: 'yyyymmdd',
+		hiddenName: true
+	});
 
 	$('.edit-team').click(function() {
 		var team_id = $(this).siblings('.hidden-team-id').val();

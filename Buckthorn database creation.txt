@@ -35,7 +35,6 @@ CREATE TABLE observation
 CREATE TABLE biodiversity
 (
 	obs_id INT,
-	num_bt INT,
 	bio_notes VARCHAR(4096),
 	PRIMARY KEY (obs_id),
 	FOREIGN KEY (obs_id) REFERENCES observation(obs_id)

@@ -6,6 +6,10 @@ ul.inline li {
 	display: inline-block;
 }
 
+div.divider {
+	margin-bottom: 40px;
+}
+
 nav.main-nav {
 	padding-left: 40px;
 	padding-right: 40px;
@@ -39,6 +43,10 @@ div.collapsible-header.active {
 	background-color: white;
 }
 
+div.collapsible-header div.secondary-content.short {
+	height: 44px;
+}
+
 /*div.collapsible-header.active + div.collapsible-body {
 	background-color: #e7f3e7;
 }
@@ -63,4 +71,15 @@ div.collapsible-body {
 
 .team-action-btn {
 	margin-top: 24px;
+}
+
+form.inline-block {
+	display: inline-block;
+}
+
+button.clear-btn-formatting {
+	background:none;
+	border:none;
+	display: inline;
+	padding: 0;
 }

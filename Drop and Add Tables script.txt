@@ -84,7 +84,6 @@ DROP TABLE IF EXISTS `DB07`.`biodiversity` ;
 
 CREATE TABLE IF NOT EXISTS `DB07`.`biodiversity` (
   `obs_id` INT NOT NULL,
-  `num_bt` INT NULL,
   `bio_notes` VARCHAR(4096) NULL,
   PRIMARY KEY (`obs_id`),
   CONSTRAINT `obs_id_bio`

@@ -8,9 +8,8 @@ include 'functions.php';
 			switch ($_POST['action'])
 			{
 				case 'add':
-					$con = get_con();
-					$result = mysqli_query($con, "INSERT INTO team (team_name) VALUES ('{$_POST['team_name']}')");
-					$team_id = mysqli_insert_id($con);
+					$result = mysqli_query(get_con(), "INSERT INTO team VALUES (NULL, '{$_POST['team_name']}')");
+					$team_id = mysqli_insert_id(get_con());
 					header("Location: http://www.mathcs.bethel.edu/~jom44754/Buckthorn/editTeam.php?team_id=$team_id");
 					die();
 				break;
